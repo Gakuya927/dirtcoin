@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'main.dart';
+import 'main.dart'; // Import main.dart to access DataEntryPage
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,73 +10,52 @@ class HomePage extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          // Background image with CachedNetworkImage
-          CachedNetworkImage(
-            imageUrl:
-                'https://images.unsplash.com/photo-1542838132-92de480d191c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-            fit: BoxFit.cover,
-            placeholder: (context, url) => Container(
-              color: Colors.lightBlue[50],
-              child: const Center(child: CircularProgressIndicator()),
-            ),
-            errorWidget: (context, url, error) => Container(
-              color: Colors.lightBlue[50],
-              child: const Center(child: Icon(Icons.error, size: 50, color: Colors.red)),
-            ),
-          ),
-          // Gradient overlay for readability
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.black.withOpacity(0.5),
-                  Colors.black.withOpacity(0.3),
-                ],
-              ),
-            ),
+            color: Colors.lightBlue[50],
           ),
-          // Content (title, tagline, and button)
+          Container(
+            color: Colors.black.withOpacity(0.2),
+          ),
           SafeArea(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text(
                     'Dirt Coin Market',
                     style: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black87,
                       shadows: [
                         Shadow(
                           blurRadius: 10.0,
-                          color: Colors.black87,
+                          color: Colors.black45,
                           offset: Offset(2.0, 2.0),
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Earn by Sharing! 🌽 Submit Grocery Prices & Win Coins!',
                     textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Text(
+                    'Earn by Sharing! 🌽 Submit Grocery Prices & Win Coins!',
                     style: TextStyle(
                       fontSize: 18,
+                      color: Colors.black87,
                       fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 5.0,
-                          color: Colors.black54,
-                          offset: Offset(1.0, 1.0),
-                        ),
-                      ],
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 32),
-                  ElevatedButton(
+                ),
+                const SizedBox(height: 32),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -87,7 +65,7 @@ class HomePage extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.lightBlue[400],
+                      backgroundColor: Colors.lightBlue[600],
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 32,
@@ -103,8 +81,8 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],
