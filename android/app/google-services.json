@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1080666149157",
+    "project_id": "dirt-coin-b252d",
+    "storage_bucket": "dirt-coin-b252d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080666149157:android:a99b47bd4015c4cd5c8acc",
+        "android_client_info": {
+          "package_name": "com.example.dirt_coin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz8a-k8DBbXQ3yor_Aqmzaqw4aOPp9v08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
